@@ -21,7 +21,8 @@ function make(paragraph, _) {
           /* shouldUpdate */component[/* shouldUpdate */8],
           /* render */(function (self) {
               return React.createElement("div", {
-                          onClick: (function () {
+                          tabIndex: 0,
+                          onKeyPress: (function () {
                               return Curry._1(self[/* send */3], /* KeyDown */0);
                             })
                         }, React.createElement("p", undefined, paragraph), React.createElement("span", undefined, String(self[/* state */1][/* lettersCorrect */0])));

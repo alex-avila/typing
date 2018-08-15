@@ -19,7 +19,10 @@ let make = (~paragraph, _children) => {
     },
 
     render: self => {
-        <div onClick={_event => self.send(KeyDown)}>
+        <div
+            onKeyPress={_event => self.send(KeyDown)}
+            tabIndex=0
+        >
             <p>(ReasonReact.string(paragraph))</p>
             <span>(ReasonReact.string(string_of_int(self.state.lettersCorrect)))</span>
         </div>;
