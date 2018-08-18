@@ -25,14 +25,24 @@ function make(paragraph, _) {
                           onKeyPress: (function () {
                               return Curry._1(self[/* send */3], /* KeyDown */0);
                             })
-                        }, React.createElement("p", undefined, paragraph), React.createElement("span", undefined, String(self[/* state */1][/* lettersCorrect */0])));
+                        }, React.createElement("p", undefined, React.createElement("span", undefined, self[/* state */1][/* beginning */1]), React.createElement("span", undefined, self[/* state */1][/* ending */2])), React.createElement("span", undefined, String(self[/* state */1][/* lettersCorrect */0])));
             }),
           /* initialState */(function () {
-              return /* record */[/* lettersCorrect */0];
+              return /* record */[
+                      /* lettersCorrect */0,
+                      /* beginning */"",
+                      /* ending */paragraph,
+                      /* position */0
+                    ];
             }),
           /* retainedProps */component[/* retainedProps */11],
           /* reducer */(function (_, state) {
-              return /* Update */Block.__(0, [/* record */[/* lettersCorrect */state[/* lettersCorrect */0] + 1 | 0]]);
+              return /* Update */Block.__(0, [/* record */[
+                          /* lettersCorrect */state[/* lettersCorrect */0] + 1 | 0,
+                          /* beginning */state[/* beginning */1],
+                          /* ending */state[/* ending */2],
+                          /* position */state[/* position */3]
+                        ]]);
             }),
           /* jsElementWrapped */component[/* jsElementWrapped */13]
         ];

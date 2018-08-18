@@ -6,7 +6,7 @@ type state = {
 };
 
 type action =
-  | KeyDown(whatever);
+  | KeyDown;
 
 let component = ReasonReact.reducerComponent("Text");
 
@@ -22,17 +22,13 @@ let make = (~paragraph, _children) => {
 
     reducer: (action, state) => {
         switch (action) {
-        | KeyDown(e) => {
-            if (e.key === "A") {
-                ReasonReact.Update({...state, lettersCorrect: state.lettersCorrect + 1})
-            }
-        }
+        | KeyDown => ReasonReact.Update({...state, lettersCorrect: state.lettersCorrect + 1})
         };
     },
 
     render: self => {
         <div
-            onKeyPress={event => self.send(KeyDown(event))}
+            onKeyPress={event => self.send(KeyDown)}
             tabIndex=0
         >
             <p>
