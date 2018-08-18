@@ -30,6 +30,7 @@ let make = (~paragraph, _children) => {
         <div
             onKeyPress={event => self.send(KeyDown)}
             tabIndex=0
+            style=(ReactDOMRe.Style.make(~fontFamily="Gill Sans", ~fontSize="20px", ()))
         >
             <p>
                 <span>(ReasonReact.string(self.state.beginning))</span>
